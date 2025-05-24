@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+    CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}}
+
 jobs:
     runner:
         runs-on: ubuntu-latest
