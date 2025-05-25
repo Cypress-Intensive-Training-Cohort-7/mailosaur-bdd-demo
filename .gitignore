@@ -9,7 +9,6 @@ node_modules/
 cypress/screenshots/
 cypress/videos/
 cypress/fixtures/creds.json
-cypress/fixtures/login.json
 cypress.env.json 
 cypress/reports/
 # report files
