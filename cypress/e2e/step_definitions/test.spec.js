@@ -16,11 +16,6 @@ Then(/^I should see the signup form$/, () => {
 	cy.verifyPageLoad('#fullname')
 });
 
-When(/^I fill in the business email$/, () => {
-	cy.fillInBusinessEmail()
-
-});
-
 Then(/^I select how I heard about mima through "([^"]*)"$/, (heardAboutUs) => {
 	cy.clickHowYouHeardABoutUsDropdown(heardAboutUs)
 });
