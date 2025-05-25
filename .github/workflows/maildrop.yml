@@ -11,6 +11,8 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
           max-parallel: 20
+          matrix:
+            containers: [1,2,3,4,5]
 
         steps:
         - name: Initialize node & npm
