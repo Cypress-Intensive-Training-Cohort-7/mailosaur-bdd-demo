@@ -16,11 +16,14 @@ jobs:
 
         - name: Execute Cypress Test
           uses: cypress-io/github-action@v6 
-          record: true
-          parallel: true # Runs test in parallel using settings above
+          with:
+            start: npm start
+            wait-on: 'http://localhost:3000' # Waits for above
+            record: true
+            parallel: true # Runs test in parallel using settings above
           env:
-            CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}}  
             CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+            CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
 
         - name: Upload Report
           if: always()
