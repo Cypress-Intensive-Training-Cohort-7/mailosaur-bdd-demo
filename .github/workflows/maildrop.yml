@@ -16,9 +16,7 @@ jobs:
 
         - name: Execute Cypress Test
           uses: cypress-io/github-action@v6 
-          with:
-            start: npm start
-            wait-on: 'http://localhost:3000' # Waits for above
+          with: 
             record: true
             parallel: true # Runs test in parallel using settings above
           env:
