@@ -9,6 +9,8 @@ on:
 jobs:
     runner:
         runs-on: ubuntu-latest
+        strategy:
+          max-parallel: 20
 
         steps:
         - name: Initialize node & npm
