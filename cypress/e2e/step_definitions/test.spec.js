@@ -32,8 +32,8 @@ Then(/^I should see the welcome page$/, () => {
 	return true;
 });
 
-When(/^I click on the "([^"]*)" Button$/, (buttonText) => {
-	cy.clickAnyButtonWithText(buttonText)
+When(/^I click on the "([^"]*)" (Button|Span|Link)$/, (buttonText, type) => {
+	cy.clickDesiredElement(buttonText, type)
 });
 
 Then(/^I fill in "([^"]*)" into "([^"]*)" field$/, (text,field) => {
