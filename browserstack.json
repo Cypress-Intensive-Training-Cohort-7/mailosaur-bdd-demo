@@ -1,0 +1,51 @@
+{
+    "browsers": [
+        {
+            "browser": "edge",
+            "os": "Windows 10",
+            "versions": [
+                "latest"
+            ]
+        },
+        {
+            "browser": "chrome",
+            "os": "OS X Ventura",
+            "versions": [
+                "latest"
+            ]
+        }
+    ],
+    "run_settings": {
+        "nodeVersion": "18.17.0",
+        "cypress_config_file": "./cypress.config.js",
+        "cypress_version": "13.latest",
+        "project_name": "cohort-7-github",
+        "build_name": "iteration",
+        "exclude": [],
+        "parallels": "2",
+        "npm_dependencies": {
+            "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+            "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+            "@faker-js/faker": "^9.7.0",
+            "browserstack-cypress-cli": "^1.32.8",
+            "cypress": "latest",
+            "cypress-fill-command": "^1.0.2",
+            "cypress-mailosaur": "^2.17.0"
+        },
+        "package_config_options": {
+            "cypress-cucumber-preprocessor": {
+                "stepDefinitions": [
+                    "cypress/e2e/[filepart]/step_definitions/**/*.js"
+                ]
+            }
+        },
+        "headless": true
+    },
+    "connection_settings": {
+        "local": true,
+        "local_identifier": null,
+        "local_mode": "always_on",
+        "local_config_file": null
+    },
+    "disable_usage_reporting": false
+}

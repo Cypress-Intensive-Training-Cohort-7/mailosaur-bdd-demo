@@ -12,3 +12,10 @@ cypress/fixtures/creds.json
 cypress.env.json 
 cypress/reports/
 # report files
+
+# browserstack generated files
+log/
+tmpBstackPackages/
+npm_install_debug.log
+local.log
+/results
