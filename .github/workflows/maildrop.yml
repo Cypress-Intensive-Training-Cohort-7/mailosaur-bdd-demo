@@ -13,6 +13,7 @@ jobs:
         steps:
         - name: Initialize node & npm
           uses: actions/checkout@v4
+        - run: npm ci
 
         # - name: Execute Cypress Test
         #   uses: cypress-io/github-action@v6 # Runs test in parallel using settings above
@@ -26,9 +27,7 @@ jobs:
             CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
 
         - name: execute browserstack
-          run: |
-              npm i
-              npx browserstack-cypress run --sync
+          run: npx browserstack-cypress run --sync
 
 
         - name: Upload Report
