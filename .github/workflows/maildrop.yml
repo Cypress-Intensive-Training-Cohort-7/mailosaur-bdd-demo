@@ -24,7 +24,7 @@ jobs:
             username:  ${{ secrets.BROWSERSTACK_USERNAME }}
             access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
             CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
-          run: npx browserstack-cypress run --sync
+            run: npx browserstack-cypress run --sync
 
 
         - name: Upload Report
