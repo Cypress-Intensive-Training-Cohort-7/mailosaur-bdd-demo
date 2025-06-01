@@ -26,6 +26,7 @@ jobs:
             CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
 
         - name: execute browserstack
+          run: npm i
           run: npx browserstack-cypress run --sync
 
 
