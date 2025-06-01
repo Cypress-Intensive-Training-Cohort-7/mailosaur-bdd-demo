@@ -13,18 +13,18 @@ jobs:
         steps:
         - name: Initialize node & npm
           uses: actions/checkout@v4
-        - run: npm ci
 
-        # - name: Execute Cypress Test
-        #   uses: cypress-io/github-action@v6 # Runs test in parallel using settings above
-        #   env:
-        #     CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
-        - name: BrowserStack Env Setup
-          uses: 'browserstack/github-actions/setup-env@master'
-          with:
-            username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-            access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        - name: Execute Cypress Test
+          uses: cypress-io/github-action@v6 
+          env:
             CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
+            
+        # - name: BrowserStack Env Setup
+        #   uses: 'browserstack/github-actions/setup-env@master'
+        #   with:
+        #     username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        #     access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        #     CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}} 
 
         - name: execute browserstack
           run: npx browserstack-cypress run --sync
